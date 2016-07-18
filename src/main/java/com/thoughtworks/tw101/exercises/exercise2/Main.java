@@ -8,6 +8,15 @@ public class Main {
 
         Accumulator accumulator = new Accumulator();
 
+        // use for loop to call increment a set number of times (5)
+        for(int i=0; i<5; i++){
+            accumulator.increment();
+        }
+
+        // call total to get tally
+        accumulator.total();
+        System.out.println("DONE!\n");
+
 
     }
 }
