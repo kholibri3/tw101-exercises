@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Game {
 
     private ArrayList<Integer> guesses = new ArrayList<Integer>();
+    private boolean gameOver = false;
 
     protected int generateRandomNum() {
         Random rand = new Random();
@@ -17,9 +18,15 @@ public class Game {
         return randomNum;
     }
 
+    public boolean getGameOver(){
+        return gameOver;
+    }
+
+
     protected void checkGuess(int guess, int target) {
         if(guess==target) {
             System.out.println("Congrats, you win! The target was: " + target + ".");
+            gameOver = true;
             // only print out all the previous guesses if they have any
             if(guesses.size()>=1) {
                 System.out.println("Here are your previous guesses: ");

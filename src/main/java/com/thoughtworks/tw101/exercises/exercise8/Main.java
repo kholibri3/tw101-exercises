@@ -32,6 +32,8 @@ public class Main {
                 num = Integer.parseInt(br.readLine());
                 // check to see if user input was too high/low/perfect
                 game.checkGuess(num, target);
+                if(game.getGameOver())
+                    break;
             } catch (NumberFormatException e){
                 // takes care of letters, punctuation, ...
                 System.out.println("* Number Format Exception! You did not enter a number to guess. Please try again.");
