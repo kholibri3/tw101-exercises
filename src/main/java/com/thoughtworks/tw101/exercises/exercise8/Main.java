@@ -36,10 +36,13 @@ public class Main {
                     br.close();
                     break;
                 }
-
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 // takes care of letters, punctuation, ...
+                // specific message for the user
                 System.out.println("* Number Format Exception! You did not enter a number to guess. Please try again.");
+            } catch (Exception e) {
+                // catch anything else (superclass of other exceptions)
+                System.out.println("* Exception! Please try again.");
             }
         }
     }
