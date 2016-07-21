@@ -12,8 +12,8 @@ public class Game {
         return randomNum;
     }
 
-    protected void checkGuess(int guess, int target) {
-        if(guess>target) {
+    protected void checkGuess(int numberUserGuessed, int numberForUserToGuess) {
+        if(numberUserGuessed>numberForUserToGuess) {
             System.out.println("Sorry, you're guessing too high. Try again?");
         } else {
             System.out.println("Sorry, you're guessing too low. Try again?");

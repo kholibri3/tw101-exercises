@@ -12,8 +12,7 @@ public class Main {
 
         Game game = new Game();
 
-        // the number for the user to guess
-        int target = game.generateRandomNum();
+        int numberForUserToGuess = game.generateRandomNum();
 
         System.out.println("Let's play a game! I'm thinking of a number between 1 and 100...");
         System.out.println("Can you guess what it is?");
@@ -23,15 +22,15 @@ public class Main {
         // System.out.println(target);
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int num = Integer.parseInt(br.readLine());
+        int input = Integer.parseInt(br.readLine());
 
-        while(num!=target) {
-            game.checkGuess(num, target);
+        while(input!=numberForUserToGuess) {
+            game.checkGuess(input, numberForUserToGuess);
             // get next user input
-            num = Integer.parseInt(br.readLine());
+            input = Integer.parseInt(br.readLine());
         }
 
-        System.out.println("Congrats, you win! The target was: " + target + ".");
+        System.out.println("Congrats, you win! The target was: " + numberForUserToGuess + ".");
 
     }
 }

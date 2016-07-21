@@ -22,9 +22,9 @@ public class Game {
     }
 
 
-    protected void checkGuess(int guess, int target) {
-        if(guess==target) {
-            System.out.println("Congrats, you win! The target was: " + target + ".");
+    protected void checkGuess(int numberUserGuessed, int numberForUserToGuess) {
+        if(numberUserGuessed==numberForUserToGuess) {
+            System.out.println("Congrats, you win! The target was: " + numberForUserToGuess + ".");
             gameOver = true;
             // only print out all the previous guesses if they have any
             if(guesses.size()>=1) {
@@ -33,11 +33,11 @@ public class Game {
             } else{
                 System.out.println("You have no previous guesses to show. You guessed it on the first try!");
             }
-        } else if(guess>target) {
-            guesses.add(guess);
+        } else if(numberUserGuessed>numberForUserToGuess) {
+            guesses.add(numberUserGuessed);
             System.out.println("Sorry, you're guessing too high. Try again?");
         } else {
-            guesses.add(guess);
+            guesses.add(numberUserGuessed);
             System.out.println("Sorry, you're guessing too low. Try again?");
         }
     }
