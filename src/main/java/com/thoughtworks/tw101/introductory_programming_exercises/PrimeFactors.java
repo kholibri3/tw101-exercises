@@ -20,22 +20,20 @@ public class PrimeFactors {
         int temp = n;
         List<Integer> factors = new ArrayList<Integer>();
 
-        // until you can't divide it evenly in half anymore, bc 2 is likely to be a prime factor for many
+        // 2 will be a prime factor for all evens
         while(n%2==0) {
-            // add 2 to the factors
             factors.add(2);
             n/=2;
         }
 
-        //loop through odd numbers up until n
+        //loop through odd
         for(int i=3; i<temp; i=i+2) {
             while(n%i==0) {
-                // add this number to the factors
                 factors.add(i);
                 n/=i;
             }
         }
-        // since the program starts with 2 and then increments through the odd numbers, it is guaranteed to be in increasing numerical order
+
         return factors;
     }
 }
