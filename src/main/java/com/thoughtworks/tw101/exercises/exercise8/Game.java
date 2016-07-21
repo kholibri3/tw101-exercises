@@ -13,7 +13,6 @@ public class Game {
 
     protected int generateRandomNum() {
         Random rand = new Random();
-        // generate number btwn 1-100
         int randomNum = rand.nextInt(100 - 1 + 1) + 1;
         return randomNum;
     }
@@ -32,18 +31,13 @@ public class Game {
                 System.out.println("Here are your previous guesses: ");
                 System.out.println(guesses);
             } else{
-                // otherwise
                 System.out.println("You have no previous guesses to show. You guessed it on the first try!");
             }
         } else if(guess>target) {
-            // add to the arraylist
             guesses.add(guess);
-            // they guessed too high
             System.out.println("Sorry, you're guessing too high. Try again?");
         } else {
-            // add to the arraylist
             guesses.add(guess);
-            // must be too low
             System.out.println("Sorry, you're guessing too low. Try again?");
         }
     }

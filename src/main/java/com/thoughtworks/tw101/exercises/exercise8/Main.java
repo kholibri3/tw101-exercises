@@ -15,7 +15,6 @@ public class Main {
         // the number for the user to guess
         int target = game.generateRandomNum();
 
-        // set up some statements as initial UI for the guessing game
         System.out.println("Let's play a game! I'm thinking of a number between 1 and 100...");
         System.out.println("Can you guess what it is?");
         System.out.println("Enter a number and then press 'Enter' to guess.");
@@ -27,10 +26,8 @@ public class Main {
 
         while(true) {
             try{
-                // read in input
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 num = Integer.parseInt(br.readLine());
-                // check to see if user input was too high/low/perfect
                 game.checkGuess(num, target);
                 if(game.getGameOver()) {
                     br.close();
@@ -38,7 +35,6 @@ public class Main {
                 }
             } catch (NumberFormatException e) {
                 // takes care of letters, punctuation, ...
-                // specific message for the user
                 System.out.println("* Number Format Exception! You did not enter a number to guess. Please try again.");
             } catch (Exception e) {
                 // catch anything else (superclass of other exceptions)

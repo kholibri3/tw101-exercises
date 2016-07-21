@@ -5,7 +5,6 @@ package com.thoughtworks.tw101.exercises.exercise6;
  */
 public class Troll implements Monster {
 
-    // initialize the name and number of hit points
     private String name = "Troll";
     private int hp = 40;
 

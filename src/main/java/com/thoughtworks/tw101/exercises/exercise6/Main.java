@@ -12,24 +12,19 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        // create instances of both classes
         Orc orc1 = new Orc();
         Orc orc2 = new Orc();
         Troll troll1 = new Troll();
         Troll troll2 = new Troll();
 
-        // add all monsters to list
         ArrayList<Monster> monsters = new ArrayList<Monster>();
         monsters.add(orc1);
         monsters.add(orc2);
         monsters.add(troll1);
         monsters.add(troll2);
 
-        // iterate over list of monsters
         for(Monster curr : monsters) {
-            // give them 10 pts of damage
             curr.takeDamage(10);
-            // print their status: name and final HP
             curr.reportStatus();
         }
 

@@ -26,19 +26,15 @@ public class Node implements Comparable<Node> {
             // less than 0 means this node is earlier on in the alphabet than nameOfNewNode
             if(compareTo(new Node(nameOfNewNode))<0) {
                 if(right!=null) {
-                    // recurse
                     this.right.add(nameOfNewNode);
                 } else {
-                    // right was null, so set it
                     setRight(new Node(nameOfNewNode));
                 }
             } else {
                 // greater than or equal to, means later on in the alphabet
                 if(left!=null) {
-                    // recurse
                     this.left.add(nameOfNewNode);
                 } else {
-                    // left was null, so set it
                     setLeft(new Node(nameOfNewNode));
                 }
             }
@@ -46,7 +42,6 @@ public class Node implements Comparable<Node> {
 
     public List<String> names() {
         List<String> namesList = new ArrayList<String>();
-        // get names list from the traversal
         inOrderTraversal(this, namesList);
         return namesList;
     }

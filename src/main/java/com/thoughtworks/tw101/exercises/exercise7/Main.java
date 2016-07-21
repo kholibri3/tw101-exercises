@@ -15,7 +15,6 @@ public class Main {
         // the number for the user to guess
         int target = game.generateRandomNum();
 
-        // set up some statements as initial UI for the guessing game
         System.out.println("Let's play a game! I'm thinking of a number between 1 and 100...");
         System.out.println("Can you guess what it is?");
         System.out.println("Enter a number and then press 'Enter' to guess.");
@@ -24,17 +23,14 @@ public class Main {
         // System.out.println(target);
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        // read in input
         int num = Integer.parseInt(br.readLine());
 
         while(num!=target) {
-            // give user feedback on their guess: too high/low/perfect
             game.checkGuess(num, target);
             // get next user input
             num = Integer.parseInt(br.readLine());
         }
 
-        // once out of the while loop, you guessed correctly
         System.out.println("Congrats, you win! The target was: " + target + ".");
 
     }
