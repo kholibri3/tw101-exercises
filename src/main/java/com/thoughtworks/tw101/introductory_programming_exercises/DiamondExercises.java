@@ -33,7 +33,7 @@ public class DiamondExercises {
     private static void drawAnIsoscelesTriangle(int n) {
         setUpValues(n);
         for(int i=1; i<=n; i++) {
-            StringBuilder currentRow = printRow(0, counter);
+            StringBuilder currentRow = printRow();
             System.out.println(currentRow.toString());
             counter = 0;
             // adjust # spaces and stars for next row
@@ -53,7 +53,7 @@ public class DiamondExercises {
         setUpValues(n);
         int afterMiddleRow = 0;
         for(int i=1; i<=n; i++) {
-            StringBuilder currentRow = printRow(0, counter);
+            StringBuilder currentRow = printRow();
             System.out.println(currentRow.toString());
             counter = 0;
             numSpaces-=1;
@@ -69,7 +69,7 @@ public class DiamondExercises {
         counter = 0;
 
         for(int i=n-1; i>0; i--) {
-            StringBuilder currentRow = printRow(0, counter);
+            StringBuilder currentRow = printRow();
             System.out.println(currentRow.toString());
             counter = 0;
             // adjust # spaces and stars for next row
@@ -90,7 +90,7 @@ public class DiamondExercises {
         setUpValues(n);
         int afterMiddleRow = 0;
         for(int i=1; i<n; i++) {
-            StringBuilder currentRow = printRow(0, counter);
+            StringBuilder currentRow = printRow();
             System.out.println(currentRow.toString());
             counter = 0;
             numSpaces-=1;
@@ -109,7 +109,7 @@ public class DiamondExercises {
         System.out.println(lineWithName.toString());
 
         for(int i=n-1; i>0; i--) {
-            StringBuilder currentRow = printRow(0, counter);
+            StringBuilder currentRow = printRow();
             System.out.println(currentRow.toString());
             counter = 0;
             numSpaces+=1;
@@ -130,23 +130,24 @@ public class DiamondExercises {
     }
 
     // helper method for printing a row
-    private static StringBuilder printRow(int spacesCounter, int starsCounter) {
+    private static StringBuilder printRow() {
         StringBuilder row = new StringBuilder();
-        printSpaces(spacesCounter, row);
-        printStars(starsCounter, row);
-        printSpaces(spacesCounter, row);
+        printSpaces(row);
+        printStars(row);
+        printSpaces(row);
         return row;
     }
 
     // helper method for printing the spaces of rows
-    private static void printSpaces(int spacesCounter, StringBuilder currentRow) {
-        for(spacesCounter=0; spacesCounter<getNumSpaces(); spacesCounter++) {
+    private static void printSpaces(StringBuilder currentRow) {
+        for(int spacesCounter=0; spacesCounter<getNumSpaces(); spacesCounter++) {
             currentRow.append(" ");
         }
     }
 
     // helper method for printing the stars of rows
-    private static void printStars(int starsCounter, StringBuilder currentRow) {
+    private static void printStars(StringBuilder currentRow) {
+        int starsCounter = 0;
         while(starsCounter!=getNumStars()) {
             currentRow.append("*");
             starsCounter++;
