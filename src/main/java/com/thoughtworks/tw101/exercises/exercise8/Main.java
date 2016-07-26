@@ -12,9 +12,6 @@ public class Main {
 
         Game game = new Game();
 
-        // the number for the user to guess
-        int numberForUserToGuess = game.generateRandomNum();
-
         System.out.println("Let's play a game! I'm thinking of a number between 1 and 100...");
         System.out.println("Can you guess what it is?");
         System.out.println("Enter a number and then press 'Enter' to guess.");
@@ -22,24 +19,17 @@ public class Main {
         // for testing purposes
         // System.out.println(target);
 
-        int input;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        while(true) {
+        while(!game.getGameOver()) {
             try{
-                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                input = Integer.parseInt(br.readLine());
-                game.checkGuess(input, numberForUserToGuess);
-                if(game.getGameOver()) {
-                    br.close();
-                    break;
-                }
+                int input = Integer.parseInt(br.readLine());
+                game.checkGuess(input);
             } catch (NumberFormatException e) {
                 // takes care of letters, punctuation, ...
                 System.out.println("* Number Format Exception! You did not enter a number to guess. Please try again.");
-            } catch (Exception e) {
-                // catch anything else (superclass of other exceptions)
-                System.out.println("* Exception! Please try again.");
             }
         }
+        br.close();
     }
 }

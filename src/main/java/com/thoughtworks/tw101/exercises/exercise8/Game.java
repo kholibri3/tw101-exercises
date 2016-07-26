@@ -10,11 +10,15 @@ public class Game {
 
     private ArrayList<Integer> guesses = new ArrayList<Integer>();
     private boolean gameOver = false;
+    private int numberForUserToGuess;
 
-    protected int generateRandomNum() {
+    public Game() {
+        this.numberForUserToGuess = generateRandomNum();
+    }
+
+    private int generateRandomNum() {
         Random rand = new Random();
-        int randomNum = rand.nextInt(100 - 1 + 1) + 1;
-        return randomNum;
+        return rand.nextInt(100 - 1 + 1) + 1;
     }
 
     public boolean getGameOver(){
@@ -22,7 +26,7 @@ public class Game {
     }
 
 
-    protected void checkGuess(int numberUserGuessed, int numberForUserToGuess) {
+    public void checkGuess(int numberUserGuessed) {
         if(numberUserGuessed==numberForUserToGuess) {
             System.out.println("Congrats, you win! The target was: " + numberForUserToGuess + ".");
             gameOver = true;
