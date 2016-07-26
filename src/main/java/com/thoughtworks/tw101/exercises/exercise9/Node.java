@@ -14,10 +14,10 @@ public class Node implements Comparable<Node> {
         this.right = null;
     }
 
-    public void setLeft(Node left) {
+    private void setLeft(Node left) {
         this.left = left;
     }
-    public void setRight(Node right) {
+    private void setRight(Node right) {
         this.right = right;
     }
 
